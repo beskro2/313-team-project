@@ -19,6 +19,12 @@ from cars import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('booking', views.index, name='index'),
+    path('contact_us', views.contact_us, name='contact_us'),
+    path('car_page', views.car_page, name='car_page'),
+    path('events', views.events, name='events'),
+    path('hours', views.hours, name='hours'),
+    path('manufacturer', views.manufacturer, name='manufacturer'),
 
     path('admin/', admin.site.urls),
 ]
