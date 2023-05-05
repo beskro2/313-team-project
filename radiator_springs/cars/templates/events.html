@@ -38,8 +38,14 @@
         </div>
       </nav>
       <!--navbarcode end -->
-
-      <p></p>
+      <h1>Upcoming Events</h1>
+      <ul>
+        {% for event in events %}
+          <li>{{ event.event_name }} - {{ event.event_detail}}</li>
+        {% empty %}
+          <li>No events found.</li>
+        {% endfor %}
+        </ul>
 
       <a class="link" href="contact_us">Contact Us!</a>
 
