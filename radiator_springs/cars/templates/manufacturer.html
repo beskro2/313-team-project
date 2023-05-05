@@ -7,7 +7,6 @@
   {% load static %}
   {% bootstrap_javascript %}
 </head>
-
 <link rel = "stylesheet" href='{% static "css/cssIndex.css" %}'>
 <body>
     <!--navbarcode -->
@@ -42,7 +41,13 @@
       </nav>
       <!--navbarcode end -->
 
-      <p></p>
+    <ul>
+      {% for  manufacturer in manufacturers %}
+        <li>{{ manufacturer.manufacturer_name }} - {{ manufacturer.manufacturer_description }}</li>
+        {% empty %}
+          <li>No manufacturers found.</li>
+      {% endfor %}
+    </ul>
 
       <a class="link" href="contact_us">Contact Us!</a>
 
