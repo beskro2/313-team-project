@@ -45,8 +45,8 @@
     <h1>Book an Event</h1>
 
 
-    <div id="contact">
-        <form method="POST" action="{% url 'contact_us' %}">
+    <div id="booking">
+        <form method="POST" action="{% url 'booking' %}">
 
             {% csrf_token %}
             <div class="messages"></div>

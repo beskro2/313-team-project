@@ -51,6 +51,6 @@ def manufacturer(request):
 
 
 def ticket(request):
-    template = loader.get_template('ticket.html')
-    return HttpResponse(template.render())
-
+    if request.method == 'POST':
+        return redirect('ticket')
+    return render(request, 'ticket.html')
