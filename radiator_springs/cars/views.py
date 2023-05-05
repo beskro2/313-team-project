@@ -42,8 +42,8 @@ def events(request):
  return render(request, 'events.html', {'events': events})
 
 def hours(request):
-    template = loader.get_template('hours.html')
-    return HttpResponse(template.render())
+     events = Events.objects.all()
+     return render(request, 'hours.html', {'events': events})
 
 def manufacturer(request):
     template = loader.get_template('manufacturer.html')
