@@ -46,6 +46,7 @@
     
     <div id="contact">
         <form method="POST" action="{% url 'contact_us' %}">
+           
             {% csrf_token %}
             <div class="messages"></div>
 
@@ -94,12 +95,12 @@
             </div>
 
         </form>
+
         <!--form ends-->
 
 
 </body>
 </html>
-
 <a class="link" href="contact_us">Contact Us!</a>
 
 </body>
