@@ -42,11 +42,24 @@
       <!--navbarcode end -->
 
       <h1>Car Page</h1>
-	<ul>
-	{% for car in cars %}
-		<li>{{ car.name }} - {{ car.description }}</li>
-	{% endfor %}
-	</ul>
+<!-- cars.html -->
+
+<div class="row">
+  {% for car in cars %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{{ car.image.url }}" class="card-img-top" alt="{{ car.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ car.name }}</h5>
+          <p class="card-text">{{ car.description }}</p>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No cars found.</p>
+  {% endfor %}
+</div>
+
 
       <a class="link" href="contact_us">Contact Us!</a>
 

@@ -41,13 +41,22 @@
       </nav>
       <!--navbarcode end -->
 
-    <ul>
-      {% for  manufacturer in manufacturers %}
-        <li>{{ manufacturer.manufacturer_name }} - {{ manufacturer.manufacturer_description }}</li>
-        {% empty %}
-          <li>No manufacturers found.</li>
-      {% endfor %}
-    </ul>
+      <!-- manufacturer.html -->
+
+<div class="row">
+  {% for manufacturer in manufacturers %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ manufacturer.manufacturer_name }}</h5>
+          <p class="card-text">{{ manufacturer.manufacturer_description }}</p>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No manufacturers found.</p>
+  {% endfor %}
+</div>
 
       <a class="link" href="contact_us">Contact Us!</a>
 
