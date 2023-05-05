@@ -6,8 +6,9 @@
     {% bootstrap_css %}
     {% load static %}
     {% bootstrap_javascript %}
+    <link rel = "stylesheet" href='{% static "css/cssIndex.css" %}'>
 </head>
-     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
 <body>
     <!--navbarcode -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,8 +46,8 @@
     <h1>Book an Event</h1>
 
 
-    <div id="contact">
-        <form method="POST" action="{% url 'contact_us' %}">
+    <div id="booking">
+        <form method="POST" action="{% url 'booking' %}">
 
             {% csrf_token %}
             <div class="messages"></div>
@@ -99,10 +100,8 @@
 
         <!--form ends-->
 
-
+        <a class="link" href="contact_us">Contact Us!</a>
 </body>
 </html>
-<a class="link" href="contact_us">Contact Us!</a>
 
-</body>
-</html>
+

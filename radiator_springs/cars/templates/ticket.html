@@ -5,6 +5,7 @@
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% load static %}
+  {% csrf_token %}
   {% bootstrap_javascript %}
 </head>
 <link rel = "stylesheet" href='{% static "css/cssIndex.css" %}'>
@@ -44,8 +45,8 @@
     </div>
     <h1>Buy a Ticket!</h1>
     <h3>Valid Forever</h3>
-    <div id="contact">
-        <form method="POST" action="{% url 'contact_us' %}">
+    <div id="ticket">
+        <form method="POST" action="{% url 'ticket' %}">
             {% csrf_token %}
             <div class="messages"></div>
 
