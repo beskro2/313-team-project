@@ -4,8 +4,10 @@
   <title>{% block title %}{% endblock %}</title>
   {% load bootstrap5 %}
   {% bootstrap_css %}
+  {% load static %}
   {% bootstrap_javascript %}
 </head>
+<link rel = "stylesheet" href='{% static "css/cssIndex.css" %}'>
 <body>
     <!--navbarcode -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,7 +41,12 @@
       </nav>
       <!--navbarcode end -->
 
-      <p></p>
+      <h1>Car Page</h1>
+	<ul>
+	{% for car in cars %}
+		<li>{{ car.name }} - {{ car.description }}</li>
+	{% endfor %}
+	</ul>
 
       <a class="link" href="contact_us">Contact Us!</a>
 

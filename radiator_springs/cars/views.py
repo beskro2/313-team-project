@@ -4,6 +4,7 @@ from django.template import loader
 from cars.models import Car
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from cars.models import Events
 
 
 
@@ -37,8 +38,8 @@ def car_page(request):
   
    
 def events(request):
-    template = loader.get_template('events.html')
-    return HttpResponse(template.render())
+ events = Events.objects.all()
+ return render(request, 'events.html', {'events': events})
 
 def hours(request):
     template = loader.get_template('hours.html')
