@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from cars.models import Car
+
 
 def cars(request):
     return HttpResponse("Hello world!")
@@ -17,11 +19,12 @@ def booking(request):
     template = loader.get_template('booking.html')
     return HttpResponse(template.render())
 
-def car_page(request): 
-    ##this is a place holder for the individual cars pages if we decide to do that
-    template = loader.get_template('car_page.html')
-    return HttpResponse(template.render())
-
+def car_page(request):
+   cars = Car.objects.all()
+   return render(request, 'car_page.html', {'cars': cars})
+  
+  
+   
 def events(request):
     template = loader.get_template('events.html')
     return HttpResponse(template.render())
@@ -33,5 +36,7 @@ def hours(request):
 def manufacturer(request):
     template = loader.get_template('manufacturer.html')
     return HttpResponse(template.render())
+
+
 
 
