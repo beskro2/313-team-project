@@ -1,12 +1,47 @@
-{% extends 'index.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+    <!--navbarcode -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hours">Hours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="car_page">Cars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="booking">Book Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="manufacturer">Manufacturers</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--navbarcode end -->
 
-{% block content %}
-  <h1>Cars</h1>
-  <ul>
-    {% for car in cars %}
-      <li>{{ car.name }} - {{ car.description }}</li>
-    {% empty %}
-      <li>No cars available.</li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+      <p></p>
+
+      <a class="link" href="contact_us">Contact Us!</a>
+
+</body>
+</html>
