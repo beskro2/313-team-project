@@ -26,7 +26,7 @@ urlpatterns = [
     path('events', views.events, name='events'),
     path('hours', views.hours, name='hours'),
     path('manufacturer', views.manufacturer, name='manufacturer'),
-    
+    path('ticket', views.ticket, name = 'ticket'),
 
     path('admin/', admin.site.urls),
 ]
