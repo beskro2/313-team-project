@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from cars.models import Car
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
+
 
 
 def cars(request):
@@ -12,8 +16,11 @@ def index(request):
     return HttpResponse(template.render())
 
 def contact_us(request):
-    template = loader.get_template('contact_us.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        # process form data
+        messages.success(request, 'Your message has been sent successfully!')
+        return redirect('contact_us')
+    return render(request, 'contact_us.html')
 
 def booking(request):
     template = loader.get_template('booking.html')

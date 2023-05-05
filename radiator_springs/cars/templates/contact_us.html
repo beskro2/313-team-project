@@ -5,6 +5,9 @@
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
     <!--navbarcode -->
@@ -45,7 +48,8 @@
     <h3>Museum Director</h3>
     <p>ILoveMuseums@Museum.com</p>
     <div id="contact">
-        <form method='post' class='contact-form' action="contact.php" role="form">
+        <form method="POST" action="{% url 'contact_us' %}">
+            {% csrf_token %}
             <div class="messages"></div>
 
             <div class="controls">
@@ -84,14 +88,14 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <input type="submit" class="btn btn-success btn-send" value="Send message">
+                        <button type="submit">Send Message</button>
                     </div>
                 </div>
             </div>
 
         </form>
 
-      <a class="link" href="contact_us">Contact Us!</a>
+      
 
 </body>
 </html>
