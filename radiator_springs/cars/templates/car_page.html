@@ -39,7 +39,12 @@
       </nav>
       <!--navbarcode end -->
 
-      <p></p>
+      <h1>Car Page</h1>
+	<ul>
+	{% for car in cars %}
+		<li>{{ car.name }} - {{ car.description }}</li>
+	{% endfor %}
+	</ul>
 
       <a class="link" href="contact_us">Contact Us!</a>
 
