@@ -1,47 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
 <body>
     <!--navbarcode -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hours">Hours</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="events">Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="car_page">Cars</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="booking">Book Now</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="manufacturer">Manufacturers</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hours">Hours</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="car_page">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="booking">Book Now</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="manufacturer">Manufacturers</a>
+                </li>
+            </ul>
         </div>
-      </nav>
-      <!--navbarcode end -->
+    </nav>
+    <!--navbarcode end -->
 
-      <p></p>
+    <!--form starts-->
+    </div>
+    <h1>Book an Event</h1>
+    
+    
+    <div id="contact">
+        <form method="POST" action="{% url 'contact_us' %}">
+            {% csrf_token %}
+            <div class="messages"></div>
 
-      <a class="link" href="contact_us">Contact Us!</a>
+            <div class="controls">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">reservation name*</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter reservation name *" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Enter your email *" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input type="date" id="date" />
+                            <label for="appt">start time:</label>
+                            <input type="time" id="appt" name="appt">
+                            <label for="appt">start time:</label>
+                            <input type="time" id="appt" name="appt">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_message">details *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Enter discription of event*" rows="4" required="required" data-error="Leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit">Send event request</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <!--form ends-->
+
+
+</body>
+</html>
+
+<a class="link" href="contact_us">Contact Us!</a>
 
 </body>
 </html>

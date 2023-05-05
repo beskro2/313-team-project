@@ -26,8 +26,9 @@ def contact_us(request):
     return render(request, 'contact_us.html')
 
 def booking(request):
-    template = loader.get_template('booking.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        return redirect('booking')
+    return render(request, 'booking.html')
 
 def car_page(request):
    cars = Car.objects.all()
