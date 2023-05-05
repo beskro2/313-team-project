@@ -18,6 +18,7 @@ from django.urls import path
 from cars import views
 
 urlpatterns = [
+    path('', views.index, name='home'),
     path('index', views.index, name='index'),
     path('booking', views.booking, name='booking'),
     path('contact_us', views.contact_us, name='contact_us'),

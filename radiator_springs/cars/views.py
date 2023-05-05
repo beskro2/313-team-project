@@ -11,9 +11,12 @@ from django.shortcuts import render, redirect
 def cars(request):
     return HttpResponse("Hello world!")
 
+def home(request):
+    return render(request, 'index.html')
+
+
 def index(request):
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render())
+    return render(request, 'index.html')
 
 def contact_us(request):
     if request.method == 'POST':
