@@ -4,8 +4,10 @@
   <title>{% block title %}{% endblock %}</title>
   {% load bootstrap5 %}
   {% bootstrap_css %}
+  {% load static %}
   {% bootstrap_javascript %}
 </head>
+<link rel = "stylesheet" href='{% static "css/cssIndex.css" %}'>
 <body>
     <!--navbarcode -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,7 +43,7 @@
       <h1>Upcoming Events</h1>
       <ul>
         {% for event in events %}
-          <li>{{ event.event_name }} - {{ event.event_detail}}</li>
+          <li>{{ event.event_name }} - {{event.date}} - {{ event.event_detail}}</li>
         {% empty %}
           <li>No events found.</li>
         {% endfor %}

@@ -1,10 +1,147 @@
-h1{
-    color: brown;
-}
-div{
+/* CSS code for styling the event cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
     margin: 10px;
-    border-style: inset;
-}
-p{
-    color: red;
-}
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .card-header p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  /* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  body {
+    margin: 2em;
+  }
+  body, input[type="text"], button {
+    color: #333;
+    font-family: Cambria, Georgia, serif;
+  }
+  button {
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }
+  
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  html {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+      margin-bottom: 60px;
+      background: rgb(251,251,251);
+      background: linear-gradient(90deg, rgba(251,251,251,1) 0%, rgba(33,240,237,1) 50%, rgba(246,247,247,1) 100%);
+  }
+  header {
+      background: rgb(251,251,251);
+      background: linear-gradient(90deg, rgba(251,251,251,1) 0%, rgba(123,205,204,1) 50%, rgba(246,247,247,1) 100%);
+  }
+  nav {
+      background: rgb(251,251,251);
+      background: linear-gradient(90deg, rgba(251,251,251,1) 0%, rgba(123,205,204,1) 50%, rgba(246,247,247,1) 100%);
+  }
+  footer {
+      background: rgb(251,251,251);
+      background: linear-gradient(90deg, rgba(251,251,251,1) 0%, rgba(123,205,204,1) 50%, rgba(246,247,247,1) 100%);
+      position: absolute;
+      bottom: 0;
+      height:60px;
+  }
+  
+
+table {
+      width: 800px;
+      border-collapse: collapse;
+      
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  th,
+  td {
+      padding: 15px;
+      background-color: rgba(255,255,255,0.2);
+      color: black;
+      border-color:black;
+      
+  }
+  
+  th {
+      text-align: left;
+   
+     
+  }
+  
+  td {
+      border-width: 1px;
+  }
+  
+  headerColor {
+      background: rgb(121,211,217);
+      background-image: radial-gradient(circle, rgba(121,211,217,1) 0%, rgba(101,94,96,1) 100%);
+  }
+  
