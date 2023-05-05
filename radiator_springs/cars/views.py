@@ -5,6 +5,7 @@ from cars.models import Car
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from cars.models import Events
+from cars.models import Manufacturers
 
 
 
@@ -46,8 +47,8 @@ def hours(request):
      return render(request, 'hours.html', {'events': events})
 
 def manufacturer(request):
-    template = loader.get_template('manufacturer.html')
-    return HttpResponse(template.render())
+    manufacturers = Manufacturers.objects.all()
+    return render(request, 'manufacturer.html', {'manufacturers': manufacturers})
 
 
 def ticket(request):
